@@ -1,0 +1,17 @@
+/*
+ * Classroom cards and banners
+ * Loaded after Bootstrap 5, so these rules sit on top of it.
+ * Our own class names that clash with Bootstrap start with ec- (ec-btn, ec-card, ec-row ...).
+ */
+/* classrooms */
+.t1{--tone:var(--c1)} .t2{--tone:var(--c2)} .t3{--tone:var(--c3)} .t4{--tone:var(--c4)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.cc{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-align:left;padding:0;display:flex;flex-direction:column}
+.cc .top{background:var(--tone);color:#fff;padding:16px 18px 18px;display:grid;gap:4px}
+.cc .top h3{font-size:1.15rem}
+.cc .bot{padding:14px 18px;display:grid;gap:6px;font-size:15px}
+.seats{display:flex;align-items:center;gap:8px;font-size:14px}
+.seats .bar{flex:1;height:8px}
+.banner{background:var(--tone);color:#fff;border-radius:16px;padding:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end}
+.banner p{opacity:.92}
+

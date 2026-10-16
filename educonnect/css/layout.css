@@ -1,0 +1,32 @@
+/*
+ * App shell: side navigation, page wrapper, responsive rules
+ * Loaded after Bootstrap 5, so these rules sit on top of it.
+ * Our own class names that clash with Bootstrap start with ec- (ec-btn, ec-card, ec-row ...).
+ */
+/* app shell */
+.app{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}
+.side{background:var(--nav);color:var(--nav-ink);padding:24px 16px;display:flex;flex-direction:column;gap:20px;position:sticky;top:0;align-self:start;height:100vh;overflow:auto}
+.brand{font-family:var(--font-display);font-weight:800;font-size:1.35rem;padding:0 8px;display:flex;align-items:center;gap:10px}
+.brand i,.brandbtn i{width:14px;height:14px;background:var(--hero-accent);border-radius:50%;display:inline-block}
+.orgtag{margin:0 8px;padding:10px 12px;background:var(--nav-on);border-radius:10px;font-size:14px}
+.orgtag b{display:block;font-size:15px}
+.orgtag span{color:var(--nav-muted)}
+.ec-nav{display:flex;flex-direction:column;gap:4px}
+.ec-nav-item{background:none;border:0;color:var(--nav-muted);text-align:left;padding:10px 12px;border-radius:8px;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;gap:8px}
+.ec-nav-item:hover{color:var(--nav-ink);background:var(--nav-on)}
+.ec-nav-item.on{color:var(--nav-ink);background:var(--nav-on);box-shadow:inset 3px 0 0 var(--hero-accent)}
+.ec-badge{background:var(--hero-accent);color:#14204A;border-radius:99px;font-size:12px;font-weight:800;padding:0 8px;min-width:22px;text-align:center}
+.me{margin-top:auto;display:flex;flex-direction:column;gap:12px;padding:12px;border-top:1px solid var(--nav-on)}
+.me small{color:var(--nav-muted);font-size:13px;display:block}
+.main{padding-block:32px 64px;padding-inline:clamp(16px,3vw,40px);min-width:0}
+.wrap{max-width:1100px;margin-inline:auto;display:flex;flex-direction:column;gap:24px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.head p{color:var(--muted);margin-top:4px}
+@media (max-width:860px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .side{position:static;height:auto;padding:16px;gap:12px}
+  .ec-nav{flex-direction:row;overflow-x:auto;padding-bottom:4px}
+  .ec-nav-item{white-space:nowrap}
+  .me{margin-top:0;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;border-top:0;padding:0 8px}
+}
+

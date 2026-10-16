@@ -1,0 +1,5 @@
+/*
+ * Small compatibility layer for Bootstrap 5's "reboot" styles.
+ * Loaded right after Bootstrap and before our own CSS. Remove it if you decide to restyle everything with Bootstrap classes.
+ */
+legend{float:none;width:auto;padding:0;margin:0;font-size:inherit;line-height:inherit}

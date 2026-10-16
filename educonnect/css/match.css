@@ -1,0 +1,24 @@
+/*
+ * QR matching form and recommendation cards
+ * Loaded after Bootstrap 5, so these rules sit on top of it.
+ * Our own class names that clash with Bootstrap start with ec- (ec-btn, ec-card, ec-row ...).
+ */
+/* matching form and results */
+.opt{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:12px}
+.opt.best{border-color:var(--ok);box-shadow:0 0 0 1px var(--ok)}
+.opt h3{font-size:1.2rem}
+.reasons{display:grid;gap:4px;margin:0;padding-left:20px}
+.reasons li.good::marker{color:var(--ok)}
+.reasons li.diff{color:var(--warn)}
+.reasons li.diff::marker{color:var(--warn)}
+.orghead{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.logo{width:56px;height:56px;border-radius:14px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:1.4rem;flex:none}
+.route{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.qr{width:200px;max-width:100%;background:#fff;padding:10px;border-radius:12px;border:1px solid var(--line)}
+.qr svg{width:100%;height:auto;display:block}
+.code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:2rem;font-weight:700;letter-spacing:.2em}
+.checks{display:flex;gap:8px 20px;flex-wrap:wrap}
+.checks label{display:flex;gap:8px;align-items:center;font-weight:500}
+.sel{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}
+

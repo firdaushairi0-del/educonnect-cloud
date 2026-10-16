@@ -1,0 +1,44 @@
+/*
+ * Design tokens, light and dark themes, base typography
+ * Loaded after Bootstrap 5, so these rules sit on top of it.
+ * Our own class names that clash with Bootstrap start with ec- (ec-btn, ec-card, ec-row ...).
+ */
+/* Layout concept: a dark navigation rail on the left and one working area on the right for signed-in users. Public pages (landing, organisation QR form) use a top bar. Each organisation is a private workspace. */
+:root{
+  --bg:#F5F7FD; --surface:#FFFFFF; --surface2:#E7EBF8; --ink:#14204A; --muted:#555F85; --line:#D9DFF1;
+  --accent:#2447D6; --accent-ink:#FFFFFF; --accent-soft:#DDE5FF;
+  --nav:#101B5C; --nav-ink:#F5F7FD; --nav-muted:#A9B5E6; --nav-on:#1B2A78;
+  --ok:#1E7B3A; --ok-soft:#D9F0DE; --warn:#8A5300; --warn-soft:#FFEBC2; --bad:#B3261E; --bad-soft:#FBE0DD;
+  --c1:#2447D6; --c2:#0F8A6D; --c3:#C2377A; --c4:#BF5A0A; --hero-accent:#FF9A3D;
+  --font-display:'Nunito','Trebuchet MS',sans-serif; --font-body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1226; --surface:#131B36; --surface2:#1B2547; --ink:#E8ECFA; --muted:#9AA6CC; --line:#27325C;
+    --accent:#7C9BFF; --accent-ink:#0B1230; --accent-soft:#1C2B5E;
+    --nav:#070B1A; --nav-ink:#E8ECFA; --nav-muted:#8D99C4; --nav-on:#141D3D;
+    --ok:#7FD99A; --ok-soft:#173826; --warn:#FFB066; --warn-soft:#3A2A14; --bad:#FF9A92; --bad-soft:#40201E;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1226; --surface:#131B36; --surface2:#1B2547; --ink:#E8ECFA; --muted:#9AA6CC; --line:#27325C;
+  --accent:#7C9BFF; --accent-ink:#0B1230; --accent-soft:#1C2B5E;
+  --nav:#070B1A; --nav-ink:#E8ECFA; --nav-muted:#8D99C4; --nav-on:#141D3D;
+  --ok:#7FD99A; --ok-soft:#173826; --warn:#FFB066; --warn-soft:#3A2A14; --bad:#FF9A92; --bad-soft:#40201E;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.5;margin:0}
+h1,h2,h3{font-family:var(--font-display);font-weight:800;line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(1.7rem,3vw,2.3rem)} h2{font-size:1.4rem} h3{font-size:1.1rem}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.muted{color:var(--muted)}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.num{font-variant-numeric:tabular-nums}
+.note{font-size:14px;color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:16px}
+

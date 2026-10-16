@@ -1,0 +1,66 @@
+/*
+ * Public pages: landing, login, redirect, registration, toast
+ * Loaded after Bootstrap 5, so these rules sit on top of it.
+ * Our own class names that clash with Bootstrap start with ec- (ec-btn, ec-card, ec-row ...).
+ */
+/* login */
+.login{max-width:960px;margin-inline:auto;padding:48px 16px;display:grid;gap:32px}
+.login h1{font-size:clamp(2rem,5vw,3rem)}
+.users{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.ub{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;text-align:left}
+.ub:hover{border-color:var(--accent)}
+.ub[disabled]{opacity:.55;cursor:not-allowed}
+.formpage{max-width:760px;margin-inline:auto;padding:40px 16px 64px;display:grid;gap:24px}
+
+/* public pages */
+.topbar{position:sticky;top:0;z-index:5;background:var(--nav);color:var(--nav-ink);border-bottom:1px solid var(--nav-on)}
+.topin{max-width:1100px;margin-inline:auto;padding:12px clamp(16px,3vw,40px);display:flex;align-items:center;gap:12px 16px;flex-wrap:wrap}
+.brandbtn{background:none;border:0;color:var(--nav-ink);font-family:var(--font-display);font-weight:800;font-size:1.3rem;display:flex;align-items:center;gap:10px;cursor:pointer;padding:0}
+.toplinks{display:flex;gap:4px;margin-left:auto}
+.toplinks button{background:none;border:0;color:var(--nav-muted);padding:8px 12px;cursor:pointer;font-weight:600;border-radius:8px}
+.toplinks button:hover{color:var(--nav-ink);background:var(--nav-on)}
+.topin>.theme{margin-left:auto}
+.toplinks+.theme{margin-left:0}
+@media (max-width:700px){.toplinks{display:none}.toplinks+.theme{margin-left:auto}}
+.theme{display:inline-flex;border:1px solid var(--nav-muted);border-radius:8px;overflow:hidden;flex:none}
+.theme button{flex:1;background:none;border:0;color:var(--nav-muted);padding:6px 10px;font-size:13px;font-weight:600;cursor:pointer}
+.theme button:hover{color:var(--nav-ink)}
+.theme button[aria-pressed="true"]{background:var(--nav-ink);color:var(--nav)}
+.topbar .ec-btn:not(.ghost-dark),.hero .ec-btn:not(.ghost-dark){background:var(--hero-accent);border-color:var(--hero-accent);color:#14204A}
+.hero{position:relative;overflow:hidden;background:var(--nav);color:var(--nav-ink)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--nav) 0%,var(--nav) 30%,transparent 62%)}
+.art{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+@media (max-width:860px){.art{opacity:.18}}
+.redir .art{opacity:.4}
+.heroin{position:relative;z-index:2;max-width:1100px;margin-inline:auto;padding:clamp(48px,9vw,110px) clamp(16px,3vw,40px);min-height:min(620px,80vh)}
+.heroin>.stack{max-width:560px}
+.heroin h1{font-size:clamp(2.2rem,5vw,3.4rem)}
+.ec-lead{font-size:1.15rem;color:var(--nav-muted);max-width:52ch}
+.sdg{font-size:14px;color:var(--nav-muted)}
+.sec{max-width:1100px;margin-inline:auto;padding:clamp(40px,7vw,72px) clamp(16px,3vw,40px);display:grid;gap:28px}
+.h2l{font-size:clamp(1.6rem,3.5vw,2.2rem)}
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;counter-reset:s}
+.steps li{counter-increment:s;border-top:3px solid var(--accent);padding-top:14px;display:grid;gap:6px;align-content:start}
+.steps li::before{content:counter(s);font-family:var(--font-display);font-weight:800;font-size:2rem;color:var(--accent);line-height:1}
+.band{background:var(--surface2)}
+.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.ticks{margin:0;padding-left:20px;display:grid;gap:8px}
+.cta{grid-template-columns:minmax(0,1fr) auto;align-items:center}
+@media (max-width:640px){.cta{grid-template-columns:minmax(0,1fr)}}
+.foot{border-top:1px solid var(--line)}
+.footin{max-width:1100px;margin-inline:auto;padding:24px clamp(16px,3vw,40px);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.redir{min-height:calc(100vh - 60px);display:grid;place-items:center;padding:24px 16px;position:relative;overflow:hidden;background:var(--nav)}
+.rcard{position:relative;z-index:1;max-width:440px;width:100%;text-align:center;display:grid;gap:14px;justify-items:center;padding:32px}
+.rcard h1{font-size:1.7rem}
+.avatar.big{width:64px;height:64px;font-size:22px;background:var(--accent-soft);color:var(--accent)}
+.ec-progress{width:100%;height:6px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.ec-progress span{display:block;height:100%;background:var(--accent);animation:fill 1.8s linear forwards}
+@keyframes fill{from{width:0}to{width:100%}}
+@media (prefers-reduced-motion:reduce){.ec-progress span{animation:none;width:100%}}
+.overlay{position:fixed;inset:0;background:rgba(10,12,18,.6);display:grid;place-items:center;padding:16px;z-index:10}
+.overlay[hidden]{display:none}
+.dialog{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;width:min(520px,100%);display:grid;gap:16px;max-height:90vh;overflow:auto}
+.dialog form{display:grid;gap:14px}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:10px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20;max-width:calc(100% - 32px)}
+#toast.show{opacity:1;transform:translateX(-50%)}
+@media (prefers-reduced-motion:reduce){#toast{transition:none}}
