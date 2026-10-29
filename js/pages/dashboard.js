@@ -1,6 +1,6 @@
 /*
  * Platform administrator: dashboard, organisations, master subjects, statistics helpers
- * Part of EduConnect Cloud prototype. Classic script: shares globals with the other files, so load order in index.html matters.
+ * Part of Tutorbit prototype. Classic script: shares globals with the other files, so load order in index.html matters.
  */
 'use strict';
 

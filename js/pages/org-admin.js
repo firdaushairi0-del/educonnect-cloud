@@ -1,6 +1,6 @@
 /*
  * Organisation administrator: requests, classrooms, sessions, members, subjects, profile
- * Part of EduConnect Cloud prototype. Classic script: shares globals with the other files, so load order in index.html matters.
+ * Part of Tutorbit prototype. Classic script: shares globals with the other files, so load order in index.html matters.
  */
 'use strict';
 
@@ -8,7 +8,7 @@
 function viewRequests(){
   var o=myOrg(),q=F('mq','').toLowerCase(),st=F('ms','all');
   var list=S.requests.filter(function(r){return r.orgId===o.id&&(st==='all'||r.status===st)&&(!q||reqLabel(r).toLowerCase().indexOf(q)>-1)}).sort(function(a,b){return b.createdAt.localeCompare(a.createdAt)});
-  return head('Matching requests','Review what learners chose. EduConnect recommends, you decide.')+
+  return head('Matching requests','Review what learners chose. Tutorbit recommends, you decide.')+
     '<div class="filters">'+finput('mq','Search by learner')+fselect('ms','Status',[['all','All statuses'],['Pending Approval','Pending Approval'],['Approved','Approved'],['Rejected','Rejected'],['Cancelled','Cancelled'],['Unmatched','Unmatched']])+'</div>'+
     tbl(['Learner','Preference','Selected option','Date','Status',''],list.map(function(r){
       var a=btn('reqDetails',r.id,'Details');

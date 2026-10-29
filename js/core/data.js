@@ -1,6 +1,6 @@
 /*
  * Sample data (stands in for the MySQL tables; nothing is saved to a server)
- * Part of EduConnect Cloud prototype. Classic script: shares globals with the other files, so load order in index.html matters.
+ * Part of Tutorbit prototype. Classic script: shares globals with the other files, so load order in index.html matters.
  */
 'use strict';
 
@@ -14,7 +14,7 @@ var S={
     {id:4,slug:'bright-path',name:'Bright Path Learning Hub',type:'NGO education programme',desc:'Weekend learning support for children in the community.',location:'Alor Gajah, Melaka',contact:'info@brightpath.example',branches:['Alor Gajah'],modes:['physical'],status:'pending'}
   ],
   users:[
-    {id:1,name:'Dr Rahmah Yusof',email:'rahmah@educonnect.example',kind:'platform',status:'active'},
+    {id:1,name:'Dr Rahmah Yusof',email:'rahmah@tutorbit.example',kind:'platform',status:'active'},
     {id:2,name:'Aina Rahman',email:'aina@abc-tuition.example',kind:'member',status:'active'},
     {id:3,name:'Daniel Tan',email:'daniel@abc-tuition.example',kind:'member',status:'active'},
     {id:4,name:'Nurul Huda',email:'nurul@abc-tuition.example',kind:'member',status:'active'},

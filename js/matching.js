@@ -1,6 +1,6 @@
 /*
  * Smart matching: weighted, rule-based, explainable (the complex query)
- * Part of EduConnect Cloud prototype. Classic script: shares globals with the other files, so load order in index.html matters.
+ * Part of Tutorbit prototype. Classic script: shares globals with the other files, so load order in index.html matters.
  */
 'use strict';
 

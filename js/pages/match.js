@@ -1,6 +1,6 @@
 /*
  * Learner pages: QR matching form, results, identify, guest check-in
- * Part of EduConnect Cloud prototype. Classic script: shares globals with the other files, so load order in index.html matters.
+ * Part of Tutorbit prototype. Classic script: shares globals with the other files, so load order in index.html matters.
  */
 'use strict';
 
@@ -52,7 +52,7 @@ function matchResults(o){
   var html=head;
   if(prim.length)html+='<div class="choices">'+prim.map(function(r){return optCard(r,res.indexOf(r))}).join('')+'</div>';
   if(alt.length)html+='<div class="stack"><h3>'+(p.arrangement==='group'?'One-to-one alternatives':'Group classroom alternatives')+'</h3><div class="choices">'+alt.map(function(r){return optCard(r,res.indexOf(r))}).join('')+'</div></div>';
-  return html+'<p class="note">EduConnect recommends. The organisation makes the final placement decision.</p>';
+  return html+'<p class="note">Tutorbit recommends. The organisation makes the final placement decision.</p>';
 }
 function matchIdentify(o){
   var m=S.match,r=m.chosen;

@@ -1,4 +1,4 @@
-# EduConnect Cloud prototype (front end)
+# Tutorbit prototype (front end)
 
 Open `index.html` in a browser. No build step and no server needed. Everything uses sample data and resets on refresh.
 

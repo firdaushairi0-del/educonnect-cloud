@@ -1,6 +1,6 @@
 /*
  * Signed-in shell, navigation and shared view helpers
- * Part of EduConnect Cloud prototype. Classic script: shares globals with the other files, so load order in index.html matters.
+ * Part of Tutorbit prototype. Classic script: shares globals with the other files, so load order in index.html matters.
  */
 'use strict';
 
@@ -24,7 +24,7 @@ function shellHTML(){
   var u=ME(),o=myOrg(),items=navItems(),n=unread();
   if(!items.some(function(i){return i[0]===S.view}))S.view=homeView();
   var roleText=has('platform')?'Platform administrator':has('learner')?'Learner':myRoles().join(' + ');
-  return '<div class="app"><aside class="side"><div class="brand"><i></i>EduConnect</div>'+
+  return '<div class="app"><aside class="side"><div class="brand"><i></i>Tutorbit</div>'+
     (o?'<div class="orgtag"><b>'+esc(o.name)+'</b><span>Private workspace</span></div>':'')+
     '<nav class="ec-nav" aria-label="Main">'+items.map(function(i){
       var on=S.view===i[0];

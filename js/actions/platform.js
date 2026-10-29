@@ -1,13 +1,13 @@
 /*
  * Actions: approve or suspend organisations, master subjects
- * Part of EduConnect Cloud prototype. Classic script: shares globals with the other files, so load order in index.html matters.
+ * Part of Tutorbit prototype. Classic script: shares globals with the other files, so load order in index.html matters.
  */
 'use strict';
 
 /* platform administrator */
 A.orgApprove=function(el){
   var o=ORG(+el.dataset.id);o.status='active';
-  S.memberships.forEach(function(m){if(m.orgId===o.id&&m.status==='pending'&&m.roles.indexOf('admin')>-1){m.status='active';ensureTutor(m);notify(m.userId,o.name+' is now active. Welcome to EduConnect.')}});
+  S.memberships.forEach(function(m){if(m.orgId===o.id&&m.status==='pending'&&m.roles.indexOf('admin')>-1){m.status='active';ensureTutor(m);notify(m.userId,o.name+' is now active. Welcome to Tutorbit.')}});
   render();toast(o.name+' approved.');
 };
 A.orgReject=function(el){var o=ORG(+el.dataset.id);confirmBox('Reject '+o.name+'?','The workspace is marked inactive and its applicant cannot sign in.','Reject',function(){o.status='inactive';S.memberships.forEach(function(m){if(m.orgId===o.id)m.status='inactive'});render();toast('Application rejected.')})};

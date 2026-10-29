@@ -1,6 +1,6 @@
 /*
  * Constants and date helpers
- * Part of EduConnect Cloud prototype. Classic script: shares globals with the other files, so load order in index.html matters.
+ * Part of Tutorbit prototype. Classic script: shares globals with the other files, so load order in index.html matters.
  */
 'use strict';
 
@@ -15,7 +15,7 @@ var SKILL=['Beginner','Intermediate','Advanced','All Levels'];
 var AUD=['Children','Teenagers','Adults','Senior Citizens','General Public'];
 var LEVEL_GROUPS=[['Academic level',ACAD],['Skill level',SKILL],['Audience group',AUD]];
 var ORG_TYPES=['Tuition centre','Independent tutor','Library','NGO education programme','Community learning centre','University outreach programme','School support programme'];
-var BASE='https://educonnect.example';
+var BASE='https://tutorbit.example';
 
 /* ---------- dates ---------- */
 function pad(n){return String(n).padStart(2,'0')}

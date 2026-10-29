@@ -1,6 +1,6 @@
 /*
  * Public pages: landing, sign in, redirect, organisation registration
- * Part of EduConnect Cloud prototype. Classic script: shares globals with the other files, so load order in index.html matters.
+ * Part of Tutorbit prototype. Classic script: shares globals with the other files, so load order in index.html matters.
  */
 'use strict';
 
@@ -35,7 +35,7 @@ function topbar(mode){
   var right=mode==='landing'?'<button class="ec-btn sm ghost-dark" data-act="goPage" data-page="register">Register an organisation</button><button class="ec-btn sm" data-act="goPage" data-page="login">Sign in</button>':
     mode==='login'?'<button class="ec-btn sm ghost-dark" data-act="goPage" data-page="landing">Back to home</button>':
     mode==='org'?'<button class="ec-btn sm" data-act="goPage" data-page="login">Sign in</button>':'';
-  return '<header class="topbar"><div class="topin"><button class="brandbtn" data-act="goPage" data-page="landing"><i></i>EduConnect</button>'+links+themeCtl()+right+'</div></header>';
+  return '<header class="topbar"><div class="topin"><button class="brandbtn" data-act="goPage" data-page="landing"><i></i>Tutorbit</button>'+links+themeCtl()+right+'</div></header>';
 }
 function landingHTML(){
   var steps=[
@@ -50,16 +50,16 @@ function landingHTML(){
     ['Learners and guardians',['No searching through a public tutor list','Enter your needs once and see what fits','Track requests, sessions and give private feedback']]
   ];
   return topbar('landing')+
-  '<section class="hero">'+art()+'<div class="heroin"><div class="stack" style="gap:20px"><p class="eyebrow" style="color:var(--hero-accent)">Matching and session management for education providers</p><h1>Match every learner to the right tutor or class</h1><p class="ec-lead">EduConnect Cloud helps a provider connect a learner’s needs with a suitable tutor or existing classroom, then manage the sessions that follow.</p><div class="ec-row"><button class="ec-btn big" data-act="goPage" data-page="register">Register an organisation</button><button class="ec-btn big ghost-dark" data-act="openOrg" data-slug="abc-tuition">Try the learner QR page</button></div><p class="sdg">Supports UN Sustainable Development Goal 4: Quality Education</p></div></div></section>'+
+  '<section class="hero">'+art()+'<div class="heroin"><div class="stack" style="gap:20px"><p class="eyebrow" style="color:var(--hero-accent)">Matching and session management for education providers</p><h1>Match every learner to the right tutor or class</h1><p class="ec-lead">Tutorbit helps a provider connect a learner’s needs with a suitable tutor or existing classroom, then manage the sessions that follow.</p><div class="ec-row"><button class="ec-btn big" data-act="goPage" data-page="register">Register an organisation</button><button class="ec-btn big ghost-dark" data-act="openOrg" data-slug="abc-tuition">Try the learner QR page</button></div><p class="sdg">Supports UN Sustainable Development Goal 4: Quality Education</p></div></div></section>'+
   '<section class="sec" id="how"><div class="stack" style="gap:8px"><p class="eyebrow" style="color:var(--accent)">How it works</p><h2 class="h2l">From a learner’s need to a scheduled class</h2></div><ol class="steps">'+steps.map(function(s){return '<li><h3>'+esc(s[0])+'</h3><p class="muted">'+esc(s[1])+'</p></li>'}).join('')+'</ol></section>'+
   '<div class="band"><section class="sec" id="who"><div class="stack" style="gap:8px"><p class="eyebrow" style="color:var(--accent)">Who it is for</p><h2 class="h2l">Private workspaces, not a public marketplace</h2><p class="muted" style="max-width:62ch">Each provider controls its own tutors, classrooms and approvals. A learner only ever sees the provider whose QR code or link they opened.</p></div><div class="cards3">'+who.map(function(w){return '<div class="ec-card stack" style="gap:12px"><h3>'+esc(w[0])+'</h3><ul class="ticks">'+w[1].map(function(i){return '<li>'+esc(i)+'</li>'}).join('')+'</ul></div>'}).join('')+'</div></section></div>'+
   '<section class="sec cta"><div class="stack" style="gap:8px"><h2 class="h2l">Ready to try the prototype?</h2><p class="muted">Sign in as a sample user to see each role, or scan the demo QR page as a learner.</p></div><div class="ec-row"><button class="ec-btn big" data-act="goPage" data-page="login">Sign in</button></div></section>'+
-  '<footer class="foot"><div class="footin"><span>EduConnect Cloud · Workshop 2 project · BITA Sem 1 Session 2026/2027</span><span>Prototype with sample data. Nothing is saved to a server.</span></div></footer>';
+  '<footer class="foot"><div class="footin"><span>Tutorbit · Workshop 2 project · BITA Sem 1 Session 2026/2027</span><span>Prototype with sample data. Nothing is saved to a server.</span></div></footer>';
 }
 function loginHTML(){
   var groups=[['Platform administrator',function(u){return u.kind==='platform'}],['Organisation staff',function(u){return u.kind==='member'}],['Learners and guardians',function(u){return u.kind==='learner'&&u.id<=10}]];
   function sub(u){
-    if(u.kind==='platform')return 'Manages the EduConnect platform';
+    if(u.kind==='platform')return 'Manages the Tutorbit platform';
     if(u.kind==='learner')return (u.note||'Learner account');
     var m=S.memberships.filter(function(x){return x.userId===u.id})[0],o=m&&ORG(m.orgId);
     if(!m)return '';
